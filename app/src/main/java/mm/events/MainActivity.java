@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -150,6 +151,9 @@ public class MainActivity extends Activity {
         // notification is selected
         Intent intent = new Intent(this, MainActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        //Toast.makeText(CardActivity.this, "add Button", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(MainActivity.this, "Accept", Toast.LENGTH_SHORT).show();
 
         // Build notification
         // Actions are just fake
