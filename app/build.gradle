@@ -1,9 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('C:/Users/Faizan/.android/debug.keystore')
+            storePassword 'android'
+        }
+    }
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
-
     defaultConfig {
         applicationId "mm.events"
         minSdkVersion 19
