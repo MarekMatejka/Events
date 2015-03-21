@@ -1,0 +1,656 @@
+[
+    {
+      "location": "New York, NY, United States", 
+      "name": "The International Trip: New York", 
+      "start_time": "2015-03-29", 
+      "timezone": "America/New_York", 
+      "id": "1522252551375694", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "King's College London Strand Campus, Room S-2.18", 
+      "name": "GOOGLE NIGHT", 
+      "start_time": "2015-03-25T17:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "359705967554750", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2015-03-22T01:00:00+0000", 
+      "location": "Grand Connaught Rooms, London", 
+      "name": "King's Masquerade Ball", 
+      "start_time": "2015-03-21T19:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "769941639769079", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2015-03-22T12:00:00+0000", 
+      "location": "Facebook London", 
+      "name": "Facebook London Hackathon", 
+      "start_time": "2015-03-21T12:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "349467305261759", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Stamford Street Lecture Theatre KCL", 
+      "name": "IdeaBox Live Final", 
+      "start_time": "2015-03-19T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "1556216371323338", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2015-03-15T17:00:00+0000", 
+      "location": "TBC", 
+      "name": "Ideabox", 
+      "start_time": "2015-03-14T09:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "716417211808176", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2015-03-10T20:00:00+0000", 
+      "location": "FWB 1.67", 
+      "name": "Diversity in Business", 
+      "start_time": "2015-03-10T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "428370227320483", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2015-03-09T20:30:00+0000", 
+      "location": "FWB 1.60", 
+      "name": "Trading Masterclass with Futex", 
+      "start_time": "2015-03-09T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "1607094336188866", 
+      "rsvp_status": "attending"
+    },
+	{
+      "location": "FWB 1.67, Waterloo Campus, King's College London, Stamford Street, SE1 8WA", 
+      "name": "The Marketing Series: Workshop", 
+      "start_time": "2015-03-03T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "761276090635508", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Franklin-Wilkins Building, King's College Room 2.81", 
+      "name": "TEDxKCL launch + recruitment", 
+      "start_time": "2015-02-27T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "735547076514962", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "FWB 1.60", 
+      "name": "Investment Banking Masterclass", 
+      "start_time": "2015-02-25T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "1407913866177534", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "FWB 1.11, Waterloo Campus, King's College London, Stamford Street, SE1 8WA", 
+      "name": "Entrepreneurs' Panel", 
+      "start_time": "2015-02-24T18:15:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "657161204411591", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "J D Wetherspoon 'The Shakespeare's Head' - Holborn , London", 
+      "name": "Another Chill thing", 
+      "start_time": "2015-02-19T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "441106049377430", 
+      "rsvp_status": "unsure"
+    }, 
+    {
+      "end_time": "2015-02-20T21:00:00+0000", 
+      "name": "The International Trip: Stockholm and Riga", 
+      "start_time": "2015-02-16T09:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "886603544685963", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "FWB 1.10, Waterloo Campus, King's College London, Stamford Street, SE1 8WA", 
+      "name": "How to Survive in Business - Ft. Salmaan Haji-Essa", 
+      "start_time": "2015-02-12T18:15:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "375087836004539", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "The Knights Templar", 
+      "name": "Informal relaxed meetup", 
+      "start_time": "2015-02-06T17:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "1536051050008870", 
+      "rsvp_status": "unsure"
+    }, 
+    {
+      "location": "FWB G.79 (Waterloo Campus)", 
+      "name": "The Investment Banking Panel", 
+      "start_time": "2015-01-29T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "1580642832152132", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-12-08T20:00:00+0000", 
+      "location": "Room G.50, Waterloo Campus, KCL", 
+      "name": "Lectures 19 & 20 - How to Start a Startup", 
+      "start_time": "2014-12-08T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "641931002582175", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-12-01T20:00:00+0000", 
+      "location": "Room G.50, Waterloo Campus, KCL", 
+      "name": "Lectures 17 & 18 - How to Start a Startup @ KCL", 
+      "start_time": "2014-12-01T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "607618646016859", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "G.79, F-WB, King's College London, 150 Stamford Street, London, SE1 9NH, United Kingdom", 
+      "name": "Power of Image: A Conversation on Marketing and PR", 
+      "start_time": "2014-11-27T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "1507349522847872", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-11-24T20:00:00+0000", 
+      "location": "Room G.50, Waterloo Campus, KCL", 
+      "name": "Lectures 15 & 16 - How to Start a Startup @ KCL", 
+      "start_time": "2014-11-24T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "357377431101727", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Stamford Street Apartments.", 
+      "name": "Apprentice Live Final 2014", 
+      "start_time": "2014-11-19T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "824268297635681", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-11-17T20:00:00+0000", 
+      "location": "Room G.50, Waterloo Campus, KCL", 
+      "name": "Lectures 13 & 14 - How to Start a Startup @ KCL", 
+      "start_time": "2014-11-17T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "311656289043615", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "King's College London", 
+      "name": "KCLBC Apprentice Challenge", 
+      "start_time": "2014-11-15", 
+      "timezone": "Europe/London", 
+      "id": "1567038346852986", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-11-10T20:00:00+0000", 
+      "location": "Room G.50, Waterloo Campus, KCL", 
+      "name": "Lectures 11 & 12 - How to Start a Startup @ KCL", 
+      "start_time": "2014-11-10T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "731653906916885", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "TBA", 
+      "name": "Beyond the White Coat: 'Making the transition from Science to Business'", 
+      "start_time": "2014-11-04", 
+      "timezone": "Europe/London", 
+      "id": "363602257142718", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-11-03T20:00:00+0000", 
+      "location": "Room G.50, Waterloo Campus, KCL", 
+      "name": "Lectures 9 & 10 - How to Start a Startup @ KCL", 
+      "start_time": "2014-11-03T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "1451994658390003", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-10-24T21:00:00+0100", 
+      "location": "G79, Franklin-Wilkins Building, Waterloo Campus, King's College London", 
+      "name": "The Consulting Panel", 
+      "start_time": "2014-10-24T18:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "766578256735082", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Kings College Waterloo Campus", 
+      "name": "How to Survive in Business", 
+      "start_time": "2014-10-23T18:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "925782590784323", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "G94, Franklin-Wilkins Building, Waterloo Campus, King's College London", 
+      "name": "P&G Workshop", 
+      "start_time": "2014-10-21T17:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "305636216305782", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-10-20T20:00:00+0100", 
+      "location": "Room G.50, Waterloo campus, KCL", 
+      "name": "Lectures 7 & 8 - How to Start a Startup @ KCL", 
+      "start_time": "2014-10-20T18:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "840112179354928", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-10-13T20:00:00+0100", 
+      "location": "Room G.50, Waterloo Campus, KCL", 
+      "name": "Lectures 5 & 6 - How to Start a Startup @ KCL", 
+      "start_time": "2014-10-13T17:30:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "982046161822142", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "All Bar One, Holborn", 
+      "name": "Czech & Slovak Society Welcome to School Party 2014", 
+      "start_time": "2014-10-10T19:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "300723010127488", 
+      "rsvp_status": "unsure"
+    },
+	{
+      "location": "Room G.50, Waterloo Campus, Kcl", 
+      "name": "Lectures 3 & 4 - How to Start a Startup @ KCL", 
+      "start_time": "2014-10-06T17:30:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "1543550652523275", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Konnect London, Terminus PL, Victoria, London, SW1V 1JR", 
+      "name": "KCLBC: The Launch", 
+      "start_time": "2014-10-03T21:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "711481325595195", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Glenroy street 8 W12 0HF London", 
+      "name": "Kolaudacia 'U Strigy'", 
+      "start_time": "2014-10-03", 
+      "id": "828520380513503", 
+      "rsvp_status": "unsure"
+    }, 
+    {
+      "name": "Edvard's 21st Birthday", 
+      "start_time": "2014-10-01T20:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "1492448094346660", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-09-29T20:00:00+0100", 
+      "location": "Stamford Street Lecture Theatre, Waterloo Campus, KCL", 
+      "name": "Lectures 1 & 2 - How to Start a Startup @ KCL", 
+      "start_time": "2014-09-29T17:30:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "769153549795320", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "London, Waterloo", 
+      "name": "James is leaving to get tanned", 
+      "start_time": "2014-08-27T19:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "790600761004642", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "London", 
+      "name": "Startup School Europe", 
+      "start_time": "2014-07-26", 
+      "timezone": "Europe/London", 
+      "id": "234318276777921", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "King's College London Waterloo Campus", 
+      "name": "Entrepreneurs Conference with founder of Shazam, Vivid Drinks & Gradquiz", 
+      "start_time": "2014-03-27T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "374097292733202", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Franklin-Wilkins Building, King's College", 
+      "name": "KCLBC Presents: The Entreprenurial Scheme - Win up to L5,000 for your Business", 
+      "start_time": "2014-03-23", 
+      "timezone": "Europe/London", 
+      "id": "573260996104097", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-03-22T02:00:00+0000", 
+      "location": "The Waldorf Hilton London", 
+      "name": "The Annual King's Ball", 
+      "start_time": "2014-03-21T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "491156354322428", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-03-16T13:00:00+0000", 
+      "location": "Shoreditch Works 33 Hoxton Square N1 6NN", 
+      "name": "Facebook London Hackathon", 
+      "start_time": "2014-03-15T13:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "1420619068178034", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-03-12T21:00:00+0000", 
+      "location": "Facebook London", 
+      "name": "Facebook London Pre-Hackathon Workshop", 
+      "start_time": "2014-03-12T19:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "353592048114681", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-03-04T21:00:00+0000", 
+      "location": "B5, Franklin-Wilkins Building, King's College", 
+      "name": "Business of Sports", 
+      "start_time": "2014-03-04T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "477069475733106", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2014-03-03T20:00:00+0000", 
+      "location": "4.63, Franklin-Wilkins Building, King's College", 
+      "name": "EY Workshop", 
+      "start_time": "2014-03-03T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "257764934390656", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "name": "HackKing's", 
+      "start_time": "2014-02-22", 
+      "timezone": "Europe/London", 
+      "id": "624795444223645", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Berlin - the place to be", 
+      "name": "KCLBC's 2014 European Insight Trip - Berlin", 
+      "start_time": "2014-02-17", 
+      "timezone": "Europe/Berlin", 
+      "id": "477532862352247", 
+      "rsvp_status": "unsure"
+    }, 
+    {
+      "location": "The Curve Student Accommodation", 
+      "name": "Slovensko - Rusko hokej", 
+      "start_time": "2014-02-16T12:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "1413040612277598", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "4.63 FWB, Waterloo, KCL", 
+      "name": "Deloitte Panel & Networking Session", 
+      "start_time": "2014-02-13T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "501614003283792", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "K3.11, King's College London, Strand Campus", 
+      "name": "Teach Me X: iOS Development", 
+      "start_time": "2014-02-10T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "1459657517586397", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Leicester Square", 
+      "name": "Entrepreneurial Series", 
+      "start_time": "2014-02-08T13:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "251896341646119", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "S-1.04, King's College London, Strand Campus", 
+      "name": "Teach Me X: Ruby On Rails", 
+      "start_time": "2014-01-27T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "591965390892216", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "EAS.E.171", 
+      "name": "Dhiraj Mukherjee: Co-founder of Shazam @ Entrepreneurs Tuesdays", 
+      "start_time": "2014-01-21T19:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "749753425038617", 
+      "rsvp_status": "unsure"
+    }, 
+    {
+      "location": "se1 7pn", 
+      "name": "Poker Night!", 
+      "start_time": "2013-12-13T20:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "557744590969316", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "King's College The Strand", 
+      "name": "Codecademy Comes To King's", 
+      "start_time": "2013-12-03T19:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "320782934726417", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2013-11-20T20:00:00+0000", 
+      "location": "Kings College Waterloo Campus", 
+      "name": "KCLBC Apprentice - Live Final", 
+      "start_time": "2013-11-20T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "200348520150352", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Imperial College London", 
+      "name": "Codecademy comes to London!!", 
+      "start_time": "2013-10-15T18:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "508695342547220", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Pitcher & Piano Cornhill", 
+      "name": "Czech & Slovak Society Back To School Party 2013", 
+      "start_time": "2013-10-11T19:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "458398610943603", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "King's College London", 
+      "name": "Twitter coming to King's !", 
+      "start_time": "2013-10-08T18:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "529370060465322", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2013-10-07T20:00:00+0100", 
+      "location": "Medawar G01 Lankester LT", 
+      "name": "Coding and Cookies", 
+      "start_time": "2013-10-07T18:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "255089591282349", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Great Hall, Strand Campus, King's College London", 
+      "name": "Lecture by Ms Ana Botin, CEO of Santander UK", 
+      "start_time": "2013-10-04", 
+      "id": "215187648642805", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2013-10-04T02:00:00+0100", 
+      "location": "43 S Molton St, London W1K 5RS", 
+      "name": "KCLBC Launch Party at Amika Mayfair! Complimentary ticket and welcome drink!", 
+      "start_time": "2013-10-03T22:00:00+0100", 
+      "timezone": "Europe/London", 
+      "id": "633430606709020", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "San Francisco, USA", 
+      "name": "International Insight Trip to San Francisco", 
+      "start_time": "2013-04-01", 
+      "timezone": "America/Puerto_Rico", 
+      "id": "143544692466959", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2013-03-24T02:00:00+0100", 
+      "location": "The Waldorf Hilton London", 
+      "name": "The Annual Grand Ball 2013 - The Great Gatsby", 
+      "start_time": "2013-03-23T18:30:00+0100", 
+      "timezone": "Europe/Oslo", 
+      "id": "477018572356945", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2013-03-07T19:30:00+0000", 
+      "location": "The Great Hall, Strand, King's College London", 
+      "name": "Business of the Arts - Fashion & Media", 
+      "start_time": "2013-03-07T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "345535985564269", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Kings College Waterloo Campus, FWB G.80", 
+      "name": "Accenture Assessment Centre Skill Sessions", 
+      "start_time": "2013-03-05T18:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "561816940503440", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Kings College Waterloo Campus, FWB 3.52", 
+      "name": "Ernst & Young Case Study Workshop", 
+      "start_time": "2013-02-12T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "465587966840183", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2013-02-11T19:00:00+0000", 
+      "location": "King's College London", 
+      "name": "The Velvet Divorce - Experiences and Lessons", 
+      "start_time": "2013-02-11T17:00:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "157369251081806", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Room S-1.04, Strand Campus, King's College London", 
+      "name": "IdeaBox Launch 2013", 
+      "start_time": "2013-01-22T18:15:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "118824354958682", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2012-12-13T00:00:00+0000", 
+      "location": "Westminster Pier", 
+      "name": "London Christmas Boat Party", 
+      "start_time": "2012-12-12T19:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "300155160101734", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "location": "Edmund J Safra, Strand Campus", 
+      "name": "KCLBC Apprentice Live Final", 
+      "start_time": "2012-11-26T18:30:00+0000", 
+      "timezone": "Europe/London", 
+      "id": "506535422699384", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2011-11-06T22:00:00", 
+      "location": "Národná Rada Slovenskej Republiky (NRSR)", 
+      "name": "BratMUN 2011 - Bratislava Model United Nations Conference 2011", 
+      "start_time": "2011-11-04T09:00:00", 
+      "id": "192238204173321", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2010-09-03T16:00:00", 
+      "location": "Košická 3", 
+      "name": "Nivea Party - Gymnázium Jura Hronca", 
+      "start_time": "2010-09-03T11:00:00", 
+      "id": "140626529287800", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2010-06-20T23:00:00", 
+      "location": "http://www.nivea.sk/highlights/product_special/2010_04_skoly_soutez/?deeplink_path=party&deeplink_id=9826", 
+      "name": "tak hlasujme teda za NOVOHRADSKÚ !!! :)", 
+      "start_time": "2010-06-20T17:00:00", 
+      "id": "125939577429615", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2010-06-20T23:00:00", 
+      "location": "GJH", 
+      "name": "Nivea party podme hlasovat:)je to len par klikov:)", 
+      "start_time": "2010-06-08T17:00:00", 
+      "id": "130344350310172", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2010-05-14T12:00:00", 
+      "name": "GJH - Letná Akadémia 2010", 
+      "start_time": "2010-05-14T10:00:00", 
+      "id": "101655629880091", 
+      "rsvp_status": "attending"
+    }, 
+    {
+      "end_time": "2010-02-13T13:25:00", 
+      "location": "pri nivoch v budove cvernovky ", 
+      "name": "PAINTBALL!!!!!!", 
+      "start_time": "2010-02-13T09:30:00", 
+      "id": "259986238774", 
+      "rsvp_status": "unsure"
+    }
+]
