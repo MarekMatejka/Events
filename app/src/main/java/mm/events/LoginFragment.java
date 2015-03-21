@@ -1,3 +1,4 @@
+/*
 package mm.events;
 
 
@@ -16,4 +17,4 @@ public class LoginFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_login, container, false);
     }
 
-}
+}*/

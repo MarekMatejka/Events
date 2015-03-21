@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
         not2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createNotification();
+//                createNotification();
 //                createNotification2();
             }
         });
@@ -100,7 +100,7 @@ public class MainActivity extends Activity {
         });
     }
 
-
+/*
     public void createNotification() {
         // this
         String ns = Context.NOTIFICATION_SERVICE;
@@ -120,7 +120,7 @@ public class MainActivity extends Activity {
 // and this
 
         mNotificationManager.notify(HELLO_ID, notification);
-    }
+    }*/
 
     // another method
     public void createNotification2(/*View view*/) {
