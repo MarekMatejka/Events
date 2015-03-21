@@ -9,5 +9,7 @@
 
     <string name="facebook_api_id">799368160143378</string>
     <string name="title_facebook_login">Facebook Login</string>
+    <string name="title_fblistevent_list">FBListEvents</string>
+    <string name="title_fblistevent_detail">FBListEvent Detail</string>
 
 </resources>

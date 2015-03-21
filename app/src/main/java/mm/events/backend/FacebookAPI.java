@@ -6,5 +6,6 @@ public interface FacebookAPI {
 
     List<FBEvent> getAllEventsForUser();
     void RSVPtoEvent(String eventID, RSVPStatus status);
+    FBEvent getEvent(String id);
 
 }

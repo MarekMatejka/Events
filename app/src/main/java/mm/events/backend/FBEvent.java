@@ -1,5 +1,7 @@
 package mm.events.backend;
 
+import android.util.Log;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -60,6 +62,10 @@ public class FBEvent implements Comparable{
         this.status = status;
     }
 
+    public boolean isAllDay() {
+        return startTime.getHours() == 0;
+    }
+
     @Override
     public String toString() {
         return "FBEvent{" +
@@ -79,7 +85,8 @@ public class FBEvent implements Comparable{
     }
 
     private static Date toUtilDate(String dateString) {
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+        DateFormat format = new SimpleDateFormat(dateString.contains("T") ? "yyyy-MM-dd'T'hh:mm:ss" : "yyyy-MM-dd");
+
         try {
             return format.parse(dateString);
         } catch (ParseException e) {e.printStackTrace(); return null;}

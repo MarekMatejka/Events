@@ -16,6 +16,9 @@ import android.widget.Button;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import mm.events.backend.FacebookAPI;
+import mm.events.backend.FacebookAPIImpl;
+
 
 public class MainActivity extends Activity {
 
@@ -166,5 +169,11 @@ public class MainActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showEvents(View v) {
+        Intent intent = new Intent(this, FBListEventListActivity.class);
+        startActivity(intent);
+        onStop();
     }
 }

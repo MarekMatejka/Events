@@ -36,6 +36,11 @@ public class FacebookAPIImpl implements FacebookAPI {
         events.get(eventID).setStatus(status);
     }
 
+    @Override
+    public FBEvent getEvent(String id) {
+        return events.get(id);
+    }
+
     private Map<String,FBEvent> readEvents() {
         return parseEvents(loadJSONFromAsset());
     }
