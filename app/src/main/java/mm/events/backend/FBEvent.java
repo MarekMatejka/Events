@@ -1,12 +1,17 @@
 package mm.events.backend;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class FBEvent implements Comparable{
 
     String id;
     String name;
     String location;
-    String startTime;
-    String endTime;
+    Date startTime;
+    Date endTime;
     String timezone;
     RSVPStatus status;
 
@@ -17,8 +22,8 @@ public class FBEvent implements Comparable{
         this.id = id;
         this.name = name;
         this.location = location;
-        this.startTime = startTime;
-        this.endTime = endTime;
+        this.startTime = toUtilDate(startTime);
+        this.endTime = toUtilDate(endTime);
         this.timezone = timezone;
         this.status = status;
     }
@@ -35,11 +40,11 @@ public class FBEvent implements Comparable{
         return location;
     }
 
-    public String getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public String getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 
@@ -71,5 +76,12 @@ public class FBEvent implements Comparable{
     @Override
     public int compareTo(Object another) {
         return compareTo((FBEvent)another);
+    }
+
+    private static Date toUtilDate(String dateString) {
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+        try {
+            return format.parse(dateString);
+        } catch (ParseException e) {e.printStackTrace(); return null;}
     }
 }
