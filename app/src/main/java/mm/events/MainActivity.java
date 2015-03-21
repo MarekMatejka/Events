@@ -16,7 +16,7 @@ import android.widget.Button;
 public class MainActivity extends Activity {
 
     private static final int HELLO_ID = 1;
-    Button notify;
+    Button notify, not2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +24,23 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         registerNotifyButton();
+        registerNotifyButton2();
 
     }
 
     private void registerNotifyButton() {
-        notify = (Button) findViewById(R.id.notifyButton);
+        not2 = (Button) findViewById(R.id.notifyButton);
+        not2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createNotification();
+//                createNotification2();
+            }
+        });
+    }
+
+    private void registerNotifyButton2() {
+        notify = (Button) findViewById(R.id.notbutton2);
         notify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +50,8 @@ public class MainActivity extends Activity {
         });
     }
 
-    public void createNotification(){
+
+    public void createNotification() {
         // this
         String ns = Context.NOTIFICATION_SERVICE;
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(ns);
@@ -48,7 +61,7 @@ public class MainActivity extends Activity {
         long when = System.currentTimeMillis();
         Context context = getApplicationContext();
         CharSequence contentTitle = "fb"; // title
-        CharSequence contentText = "Hello2";
+        CharSequence contentText = "Event invite to fb hackathon";
         Intent notificationIntent = new Intent(this, LoginActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
         Notification notification = new Notification(icon, tickerText, when);
@@ -70,11 +83,14 @@ public class MainActivity extends Activity {
         // Actions are just fake
         Notification noti = new Notification.Builder(this)
                 .setContentTitle("Event invite") //title
-                .setContentText("Date").setSmallIcon(R.drawable.fb_icon)
+                .setContentText("Date")
+                .setSmallIcon(R.drawable.fb_icon)
+                .setPriority(1)
                 .setContentIntent(pIntent)
-                .addAction(R.drawable.fb_icon, "Call", pIntent)
-                .addAction(R.drawable.fb_icon, "More", pIntent)
-                .addAction(R.drawable.fb_icon, "And more", pIntent).build();
+                .addAction(0, "Accept", pIntent)
+                .addAction(0, "Maybe", pIntent)
+//              .addAction(R.drawable.fb_icon, "More", pIntent)
+                .addAction(0, "Decline", pIntent).build();
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         // hide the notification after its selected
         noti.flags |= Notification.FLAG_AUTO_CANCEL;
