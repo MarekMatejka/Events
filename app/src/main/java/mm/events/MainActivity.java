@@ -7,25 +7,75 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 
 public class MainActivity extends Activity {
 
     private static final int HELLO_ID = 1;
-    Button notify, not2;
+    Button notify, not2, calButton;
+    // TODO comment or delete following when correct calls to the createCalanderEvent done
+    String event_title, event_location, event_description;
+    boolean event_all_day = false;
+    Calendar event_end_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        // TODO comment or delete following when correct calls to the createCalanderEvent done
+        event_title = "Facebook Hackathon";
+        event_location = "10 Brock Street, NW1 3FG London, United Kingdom";
+        event_description = "Move fast and break things!";
+        event_all_day = true;
+//        event_end_time
+
         registerNotifyButton();
         registerNotifyButton2();
+        registerCalenderDummy();
+    }
 
+    // TODO: have parameters passed for title, evetn ocation etc..
+    private void createCalanderEvent(String title, String location, String description, boolean all_day, Calendar end_time) {
+        // TODO: start and end time
+        Intent calIntent = new Intent(Intent.ACTION_INSERT);
+        calIntent.setType("vnd.android.cursor.item/event");
+        calIntent.putExtra(CalendarContract.Events.TITLE, title);
+        calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, location);
+        calIntent.putExtra(CalendarContract.Events.DESCRIPTION, description);
+
+
+        // NOTE: calender month seems to start from 0 so 0 wil be january, 1 wil be feb... 11 wil be december
+        // But the day and year are correct and from 1
+        // format>>GregorianCalendar(year, month, day)
+        GregorianCalendar calDate = new GregorianCalendar(2012, 1, 15);
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, all_day);
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
+                calDate.getTimeInMillis());
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,
+                calDate.getTimeInMillis());
+
+        startActivity(calIntent);
+
+    }
+
+    private void registerCalenderDummy() {
+        calButton = (Button) findViewById(R.id.cButton);
+        calButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createCalanderEvent(event_title, event_location, event_description, event_all_day,event_end_time );
+            }
+        });
     }
 
     private void registerNotifyButton() {
@@ -96,7 +146,6 @@ public class MainActivity extends Activity {
         noti.flags |= Notification.FLAG_AUTO_CANCEL;
 
         notificationManager.notify(1, noti);
-
     }
 
 
