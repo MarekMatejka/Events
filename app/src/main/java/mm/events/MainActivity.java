@@ -32,7 +32,8 @@ public class MainActivity extends Activity {
         notify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createNotification();
+//                createNotification();
+                createNotification2();
             }
         });
     }
@@ -42,12 +43,12 @@ public class MainActivity extends Activity {
         String ns = Context.NOTIFICATION_SERVICE;
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(ns);
 
-        int icon = R.drawable.caution;
-        CharSequence tickerText = "Hello"; // ticker-text
+        int icon = R.drawable.fb_icon;
+        CharSequence tickerText = "Event Invite"; // ticker-text
         long when = System.currentTimeMillis();
         Context context = getApplicationContext();
-        CharSequence contentTitle = "Hello";
-        CharSequence contentText = "Hello";
+        CharSequence contentTitle = "fb"; // title
+        CharSequence contentText = "Hello2";
         Intent notificationIntent = new Intent(this, LoginActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
         Notification notification = new Notification(icon, tickerText, when);
@@ -57,6 +58,31 @@ public class MainActivity extends Activity {
 
         mNotificationManager.notify(HELLO_ID, notification);
     }
+
+    // another method
+    public void createNotification2(/*View view*/) {
+        // Prepare intent which is triggered if the
+        // notification is selected
+        Intent intent = new Intent(this, MainActivity.class);
+        PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        // Build notification
+        // Actions are just fake
+        Notification noti = new Notification.Builder(this)
+                .setContentTitle("Event invite") //title
+                .setContentText("Date").setSmallIcon(R.drawable.fb_icon)
+                .setContentIntent(pIntent)
+                .addAction(, "Call", pIntent)
+                .addAction(R.drawable.fb_icon, "More", pIntent)
+                .addAction(R.drawable.fb_icon, "And more", pIntent).build();
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        // hide the notification after its selected
+        noti.flags |= Notification.FLAG_AUTO_CANCEL;
+
+        notificationManager.notify(1, noti);
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
