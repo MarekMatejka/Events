@@ -25,28 +25,36 @@ public class MainActivity extends Activity {
     String event_title, event_location, event_description;
     boolean event_all_day = false;
     Calendar event_end_time;
+    int event_begin_year, event_begin_month, event_begin_day, event_begin_hrs, event_begin_min;
+    int event_end_year, event_end_month, event_end_day, event_end_hrs, event_end_min;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         // TODO comment or delete following when correct calls to the createCalanderEvent done
         event_title = "Facebook Hackathon";
         event_location = "10 Brock Street, NW1 3FG London, United Kingdom";
         event_description = "Move fast and break things!";
-        event_all_day = true;
-//        event_end_time
+        event_all_day = false;
+        event_begin_year = 2014;
+        event_begin_month = 3;
+        event_begin_day = 21;
+        event_begin_hrs = 12;
+        event_begin_min = 13;
+        event_end_year = 2014;
+        event_end_month = 3;
+        event_end_day = 22;
+        event_end_hrs = 13;
+        event_end_min = 0;
 
         registerNotifyButton();
         registerNotifyButton2();
         registerCalenderDummy();
     }
 
-    // TODO: have parameters passed for title, evetn ocation etc..
-    private void createCalanderEvent(String title, String location, String description, boolean all_day, Calendar end_time) {
-        // TODO: start and end time
+    private void createCalanderEvent(String title, String location, String description, boolean all_day, int begin_year, int begin_month, int begin_day, int begin_hrs, int begin_min, int end_year, int end_month, int end_day, int end_hrs, int end_min) {
         Intent calIntent = new Intent(Intent.ACTION_INSERT);
         calIntent.setType("vnd.android.cursor.item/event");
         calIntent.putExtra(CalendarContract.Events.TITLE, title);
@@ -57,12 +65,22 @@ public class MainActivity extends Activity {
         // NOTE: calender month seems to start from 0 so 0 wil be january, 1 wil be feb... 11 wil be december
         // But the day and year are correct and from 1
         // format>>GregorianCalendar(year, month, day)
-        GregorianCalendar calDate = new GregorianCalendar(2012, 1, 15);
-        calIntent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, all_day);
-        calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
-                calDate.getTimeInMillis());
-        calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,
-                calDate.getTimeInMillis());
+//        GregorianCalendar calDate = new GregorianCalendar(2012, 1, 15);
+//        calIntent.putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, all_day);
+
+        // Start of event details
+        Calendar beginCal = Calendar.getInstance();
+        beginCal.set(begin_year, begin_month, begin_day, begin_hrs, begin_min);
+
+        // End of event details
+        Calendar endCal = Calendar.getInstance();
+        endCal.set(end_year, end_month, end_day, end_hrs, end_min);
+//        endCal.set(year, mnth, day, hrs, min);
+
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginCal.getTimeInMillis());
+//        calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, calDate.getTimeInMillis());
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endCal.getTimeInMillis());
+//        calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, calDate.getTimeInMillis());
 
         startActivity(calIntent);
 
@@ -73,7 +91,8 @@ public class MainActivity extends Activity {
         calButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createCalanderEvent(event_title, event_location, event_description, event_all_day,event_end_time );
+
+                createCalanderEvent(event_title, event_location, event_description, event_all_day, event_begin_year, event_end_month, event_begin_day, event_begin_hrs, event_begin_min, event_end_year, event_end_month, event_end_day, event_end_hrs, event_end_min);
             }
         });
     }
