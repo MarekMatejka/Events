@@ -72,7 +72,7 @@ public class MainActivity extends Activity {
                 .setContentTitle("Event invite") //title
                 .setContentText("Date").setSmallIcon(R.drawable.fb_icon)
                 .setContentIntent(pIntent)
-                .addAction(, "Call", pIntent)
+                .addAction(R.drawable.fb_icon, "Call", pIntent)
                 .addAction(R.drawable.fb_icon, "More", pIntent)
                 .addAction(R.drawable.fb_icon, "And more", pIntent).build();
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
