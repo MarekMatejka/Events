@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 
 import mm.events.backend.FacebookAPI;
+import mm.events.domain.FBEvent;
 import mm.events.domain.FBEventDetails;
+import mm.events.views.LogoView;
 
 /**
  * A fragment representing a single FBListEvent detail screen.
@@ -53,9 +55,34 @@ public class FBListEventDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (eventDetails != null) {
-            ((TextView) rootView.findViewById(R.id.fblistevent_detail)).setText(eventDetails.getDescription());
+            ((TextView) rootView.findViewById(R.id.event_details_name)).setText(eventDetails.getName());
+            ((TextView) rootView.findViewById(R.id.event_details_organiser)).setText(eventDetails.getOwnerName());
+            ((TextView) rootView.findViewById(R.id.event_details_location)).setText(eventDetails.getLocation());
+            ((TextView) rootView.findViewById(R.id.event_details_time)).setText(getEventTime());
+            ((TextView) rootView.findViewById(R.id.event_details_description)).setText(eventDetails.getDescription());
+
+            FacebookAPI api = FacebookAPI.getInstance(getActivity());
+            FBEvent event = api.getEvent(eventDetails.getId());
+
+            ((LogoView) rootView.findViewById(R.id.event_details_status)).setLogo(getStatus(event));
+
         }
 
         return rootView;
+    }
+
+    private String getEventTime() {
+        if (eventDetails.getEndTime() != null && !eventDetails.getEndTime().equals(""))
+            return eventDetails.getFormattedStartDate() + " - " + eventDetails.getFormattedEndDate();
+        else
+            return eventDetails.getFormattedStartDate();
+    }
+
+    private String getStatus(FBEvent event) {
+        switch (event.getStatus()) {
+            case GOING: return "f00c";
+            case DECLINED: return "f00d";
+            default: return "f128";
+        }
     }
 }
