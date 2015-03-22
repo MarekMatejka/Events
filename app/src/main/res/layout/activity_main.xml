@@ -11,14 +11,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Notify"
-        android:id="@+id/notifyButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="notify2"
         android:id="@+id/notbutton2"
         android:layout_alignParentTop="true"
@@ -29,7 +21,6 @@
         android:layout_height="wrap_content"
         android:text="Calender event"
         android:id="@+id/cButton"
-        android:layout_below="@+id/notifyButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp" />
 
