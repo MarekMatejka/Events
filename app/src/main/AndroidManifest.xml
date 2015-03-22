@@ -45,6 +45,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mm.events.FBListEventListActivity" />
         </activity>
+        <activity
+            android:name=".NotifyActivityHandler"
+            android:label="@string/title_activity_notify_activity_handler" >
+        </activity>
     </application>
 
 </manifest>

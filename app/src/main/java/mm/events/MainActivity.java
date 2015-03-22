@@ -76,7 +76,9 @@ public class MainActivity extends Activity {
 
     // another method
     public void createNotification(FBEvent event) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, NotifyActivityHandler.class);
+//        Intent intent = new Intent(this, MainActivity.class);
+
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         // Build notification
