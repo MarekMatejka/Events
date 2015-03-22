@@ -15,25 +15,41 @@ public class NotifyActivityHandler extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notify_activity_handler);
+        int i = 0;
+        Log.i("here", "here");
 
-        Log.e("here", "here");
+        Bundle gotdata = getIntent().getExtras();
+        String action  = gotdata.getString("action");
 
-        String action = getIntent().getExtras().getString("action");
 
-        Log.e("action", action);
+//        String action = getIntent().getExtras().getString("action");
+
+        Log.i("action", i + action);
+        i++;
         if (action != null) {
             switch (action) {
                 case "going":
                     Toast.makeText(NotifyActivityHandler.this, "Accept", Toast.LENGTH_SHORT).show();
                     break;
                 case "maybe":
-                    Toast.makeText(NotifyActivityHandler.this, "Maybe", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NotifyActivityHandler.this, "maybe", Toast.LENGTH_SHORT).show();
                     break;
                 case "reject":
-                    Toast.makeText(NotifyActivityHandler.this, "Reject", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NotifyActivityHandler.this, "Reject!!!!!!", Toast.LENGTH_SHORT).show();
                     break;
             }
         }
+      /*  if (action != null) {
+            if (action.equals("going")) {
+                Toast.makeText(NotifyActivityHandler.this, "Accept", Toast.LENGTH_SHORT).show();
+
+            }
+
+            if (action.equals("maybe")) {
+                Toast.makeText(NotifyActivityHandler.this, "maybe", Toast.LENGTH_SHORT).show();
+            }
+        }*/
+
         finish();
     }
 
