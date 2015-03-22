@@ -32,69 +32,10 @@ public class MainActivity extends ActionBarActivity {
 
     private void registerNotifyButton2() {
         notify = (Button) findViewById(R.id.notbutton2);
-        notify.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                newEvent();
-            }
-        });
     }
 
     // another method
-    public void createNotification(FBEvent event) {
-        Log.e("main id", event.getId());
 
-
-
-
-        //going
-        Intent intentGoing = new Intent(this, NotifyActivityHandler.class);
-        intentGoing.putExtra("Accept", event.getId().toString());
-//        intentGoing.putExtra("action", ""+event.getId().toString());
-//        intentGoing.putExtra("action", "going");
-//        intentGoing.putExtra("id", event.getId().toString());
-
-        //maybe
-        Intent intentMaybe = new Intent(this, NotifyActivityHandler.class);
-        intentMaybe.putExtra("Maybe", event.getId().toString());
-//        intentMaybe.putExtra("id", event.getId());
-        //reject
-        Intent intentReject = new Intent(this, NotifyActivityHandler.class);
-        intentReject.putExtra("Decline", event.getId().toString());
-//        intentReject.putExtra("id", event.getId());
-
-       /* // 1 intent:
-        Intent i1 = new Intent(this, NotifyActivityHandler.class);
-        //i1.putExtra("action", "going");
-        PendingIntent p1 = PendingIntent.getActivity(this, 0, i1, 0);*/
-
-        // open activity
-        Intent intentContent = new Intent(this, FBListEventListActivity.class);
-        intentContent.putExtra("action", "content");
-
-        PendingIntent pIntentGoing = PendingIntent.getActivity(this, 0, intentGoing, 0);
-        PendingIntent pIntentReject = PendingIntent.getActivity(this, 1, intentReject, 0);
-        PendingIntent pIntentMaybe = PendingIntent.getActivity(this, 2, intentMaybe, 0);
-        PendingIntent pIntentContent = PendingIntent.getActivity(this, 3, intentContent, 0);
-
-        // Build notification
-        // Actions are just fake
-        Notification notification = new Notification.Builder(this)
-                .setContentTitle(event.getName())
-                .setContentText(event.getFormattedStartDate() + " @ " + event.getLocation())
-                .setSmallIcon(R.drawable.fb_icon)
-                .setPriority(1)
-                .setContentIntent(pIntentContent)
-                .addAction(0, "Accept", pIntentGoing)
-                .addAction(0, "Maybe", pIntentMaybe)
-                .addAction(0, "Decline", pIntentReject)
-                .build();
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        // hide the notification after it is selected
-        notification.flags |= Notification.FLAG_AUTO_CANCEL;
-
-        notificationManager.notify(1, notification);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -119,20 +60,5 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(this, FBListEventListActivity.class);
         startActivity(intent);
         onStop();
-    }
-
-    public void newEvent() {
-        CountDownTimer cdt = new CountDownTimer(5, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-            }
-
-            @Override
-            public void onFinish() {
-                FacebookAPI api = FacebookAPI.getInstance(getApplicationContext());
-                FBEvent newEventForUser = api.getNewEventForUser();
-                createNotification(newEventForUser);
-            }
-        }.start();
     }
 }

@@ -11,6 +11,7 @@ import mm.events.domain.RSVPStatus;
 
 public abstract class FacebookAPI {
 
+    protected OnDataChangeListener listener;
     protected static Context context;
     protected Map<String, FBEvent> events;
     private static FacebookAPI api = null;
@@ -23,9 +24,17 @@ public abstract class FacebookAPI {
         return api;
     }
 
+    public void setOnDataChangeListener(OnDataChangeListener listener) {
+        this.listener = listener;
+    }
+
     public abstract List<FBEvent> getAllEventsForUser();
     public abstract void RSVPtoEvent(String eventID, RSVPStatus status);
     public abstract FBEvent getEvent(String eventID);
     public abstract FBEventDetails getEventDetails(String eventID);
     public abstract FBEvent getNewEventForUser();
+
+    public interface OnDataChangeListener {
+        public void onDataChange();
+    }
 }

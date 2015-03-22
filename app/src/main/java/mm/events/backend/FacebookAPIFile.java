@@ -38,6 +38,8 @@ public class FacebookAPIFile extends FacebookAPI {
     @Override
     public void RSVPtoEvent(String eventID, RSVPStatus status) {
         events.get(eventID).setStatus(status);
+        if (listener != null)
+            listener.onDataChange();
     }
 
     @Override
@@ -56,6 +58,10 @@ public class FacebookAPIFile extends FacebookAPI {
         FBEvent event = new FBEvent(""+random.nextInt(123456), "Test Event", "Right here", new Date(System.currentTimeMillis()),
                 new Date(System.currentTimeMillis() + 1234567890), "Europe/UK", RSVPStatus.UNSURE);
         events.put(event.getId(), event);
+
+        if (listener != null)
+            listener.onDataChange();
+
         return event;
     }
 
