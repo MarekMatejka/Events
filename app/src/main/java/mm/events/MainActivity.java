@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.provider.CalendarContract;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +21,7 @@ import mm.events.backend.FacebookAPI;
 import mm.events.domain.FBEvent;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
     Button notify, not2, calButton;
 
