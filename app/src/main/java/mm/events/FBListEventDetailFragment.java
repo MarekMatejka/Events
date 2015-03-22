@@ -1,13 +1,17 @@
 package mm.events;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.provider.CalendarContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 import mm.events.backend.FacebookAPI;
 import mm.events.domain.FBEvent;
@@ -99,6 +103,14 @@ public class FBListEventDetailFragment extends Fragment {
                     setStatus(accept, maybe, reject, group, event);
                 }
             });
+
+            LogoView calendar = (LogoView)rootView.findViewById(R.id.event_details_calendar);
+            calendar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    createCalendarEvent(event);
+                }
+            });
         }
 
         return rootView;
@@ -126,5 +138,29 @@ public class FBListEventDetailFragment extends Fragment {
             case DECLINED: return "f00d";
             default: return "f128";
         }
+    }
+
+    private void createCalendarEvent(FBEvent event) {
+        Intent calIntent = new Intent(Intent.ACTION_INSERT);
+        calIntent.setType("vnd.android.cursor.item/event");
+        calIntent.putExtra(CalendarContract.Events.TITLE, event.getName());
+        calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, event.getLocation());
+
+        // Start of event details
+        Calendar beginCal = Calendar.getInstance();
+        beginCal.setTime(event.getStartTime());
+
+        Calendar endCal = Calendar.getInstance();
+        if (event.getEndTime() != null) {
+            endCal.setTime(event.getEndTime());
+        }
+        else {
+            endCal.setTimeInMillis(event.getStartTime().getTime()+(60*60*1000));
+        }
+
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginCal.getTimeInMillis());
+        calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endCal.getTimeInMillis());
+
+        startActivity(calIntent);
     }
 }

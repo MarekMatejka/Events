@@ -1,6 +1,5 @@
 package mm.events;
 
-import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -8,14 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.provider.CalendarContract;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
-import java.util.Calendar;
 
 import mm.events.backend.FacebookAPI;
 import mm.events.domain.FBEvent;
@@ -31,39 +27,6 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         registerNotifyButton2();
-        registerCalenderDummy();
-    }
-
-    private void createCalanderEvent(FBEvent event) {
-        Intent calIntent = new Intent(Intent.ACTION_INSERT);
-        calIntent.setType("vnd.android.cursor.item/event");
-        calIntent.putExtra(CalendarContract.Events.TITLE, event.getName());
-        calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, event.getLocation());
-
-        // Start of event details
-        Calendar beginCal = Calendar.getInstance();
-        beginCal.setTime(event.getStartTime());
-
-        // End of event details
-        Calendar endCal = Calendar.getInstance();
-        endCal.setTime(event.getEndTime());
-
-        calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginCal.getTimeInMillis());
-        calIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endCal.getTimeInMillis());
-
-        startActivity(calIntent);
-
-    }
-
-    private void registerCalenderDummy() {
-        calButton = (Button) findViewById(R.id.cButton);
-        calButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FacebookAPI api = FacebookAPI.getInstance(getApplicationContext());
-                createCalanderEvent(api.getNewEventForUser());
-            }
-        });
     }
 
     private void registerNotifyButton2() {
