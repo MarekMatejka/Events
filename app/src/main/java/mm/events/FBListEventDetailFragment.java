@@ -2,16 +2,14 @@ package mm.events;
 
 import android.os.Bundle;
 import android.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import mm.events.backend.FBEvent;
 import mm.events.backend.FacebookAPI;
-import mm.events.backend.FacebookAPIImpl;
+import mm.events.domain.FBEventDetails;
 
 /**
  * A fragment representing a single FBListEvent detail screen.
@@ -26,7 +24,7 @@ public class FBListEventDetailFragment extends Fragment {
      */
     public static final String ARG_ITEM_ID = "item_id";
 
-    private FBEvent event;
+    private FBEventDetails eventDetails;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -43,11 +41,9 @@ public class FBListEventDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            FacebookAPI api = new FacebookAPIImpl(getActivity());
-            event = api.getEvent(getArguments().getString(ARG_ITEM_ID));
+            FacebookAPI api = FacebookAPI.getInstance(getActivity());
+            eventDetails = api.getEventDetails(getArguments().getString(ARG_ITEM_ID));
         }
-        Log.e("all day", ""+event.isAllDay());
-
     }
 
     @Override
@@ -56,8 +52,8 @@ public class FBListEventDetailFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_fblistevent_detail, container, false);
 
         // Show the dummy content as text in a TextView.
-        if (event != null) {
-            ((TextView) rootView.findViewById(R.id.fblistevent_detail)).setText(event.getName());
+        if (eventDetails != null) {
+            ((TextView) rootView.findViewById(R.id.fblistevent_detail)).setText(eventDetails.getDescription());
         }
 
         return rootView;

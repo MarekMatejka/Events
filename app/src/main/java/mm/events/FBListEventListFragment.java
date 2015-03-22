@@ -9,9 +9,8 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import mm.events.backend.FBEvent;
+import mm.events.domain.FBEvent;
 import mm.events.backend.FacebookAPI;
-import mm.events.backend.FacebookAPIImpl;
 
 /**
  * A list fragment representing a list of FBListEvents. This fragment
@@ -76,7 +75,7 @@ public class FBListEventListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        FacebookAPI api = new FacebookAPIImpl(getActivity());
+        FacebookAPI api = FacebookAPI.getInstance(getActivity());
         events = api.getAllEventsForUser();
         // TODO: replace with a real list adapter.
         setListAdapter(new ArrayAdapter<FBEvent>(

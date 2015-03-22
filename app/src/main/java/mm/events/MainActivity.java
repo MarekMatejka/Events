@@ -4,21 +4,22 @@ import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.provider.CalendarContract;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.Date;
 
 import mm.events.backend.FacebookAPI;
-import mm.events.backend.FacebookAPIImpl;
+import mm.events.domain.FBEvent;
+import mm.events.domain.RSVPStatus;
 
 
 public class MainActivity extends Activity {
@@ -58,12 +59,12 @@ public class MainActivity extends Activity {
         registerCalenderDummy();
     }
 
-    private void createCalanderEvent(String title, String location, String description, boolean all_day, int begin_year, int begin_month, int begin_day, int begin_hrs, int begin_min, int end_year, int end_month, int end_day, int end_hrs, int end_min) {
+    private void createCalanderEvent(FBEvent event) {
         Intent calIntent = new Intent(Intent.ACTION_INSERT);
         calIntent.setType("vnd.android.cursor.item/event");
-        calIntent.putExtra(CalendarContract.Events.TITLE, title);
-        calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, location);
-        calIntent.putExtra(CalendarContract.Events.DESCRIPTION, description);
+        calIntent.putExtra(CalendarContract.Events.TITLE, event.getName());
+        calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, event.getLocation());
+        //calIntent.putExtra(CalendarContract.Events.DESCRIPTION, description);
 
 
         // NOTE: calender month seems to start from 0 so 0 wil be january, 1 wil be feb... 11 wil be december
@@ -74,11 +75,13 @@ public class MainActivity extends Activity {
 
         // Start of event details
         Calendar beginCal = Calendar.getInstance();
-        beginCal.set(begin_year, begin_month, begin_day, begin_hrs, begin_min);
+        beginCal.setTime(event.getStartTime());
+        //beginCal.set(begin_year, begin_month, begin_day, begin_hrs, begin_min);
 
         // End of event details
         Calendar endCal = Calendar.getInstance();
-        endCal.set(end_year, end_month, end_day, end_hrs, end_min);
+        endCal.setTime(event.getEndTime());
+        //endCal.set(end_year, end_month, end_day, end_hrs, end_min);
 //        endCal.set(year, mnth, day, hrs, min);
 
         calIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginCal.getTimeInMillis());
@@ -95,8 +98,8 @@ public class MainActivity extends Activity {
         calButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                createCalanderEvent(event_title, event_location, event_description, event_all_day, event_begin_year, event_end_month, event_begin_day, event_begin_hrs, event_begin_min, event_end_year, event_end_month, event_end_day, event_end_hrs, event_end_min);
+                FacebookAPI api = FacebookAPI.getInstance(getApplicationContext());
+                createCalanderEvent(api.getNewEventForUser());
             }
         });
     }
@@ -118,7 +121,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
 //                createNotification();
-                createNotification2();
+                //createNotification2();
+                newEvent();
             }
         });
     }
@@ -146,7 +150,7 @@ public class MainActivity extends Activity {
     }*/
 
     // another method
-    public void createNotification2(/*View view*/) {
+    public void createNotification2(FBEvent event) {
         // Prepare intent which is triggered if the
         // notification is selected
         Intent intent = new Intent(this, MainActivity.class);
@@ -158,8 +162,8 @@ public class MainActivity extends Activity {
         // Build notification
         // Actions are just fake
         Notification noti = new Notification.Builder(this)
-                .setContentTitle("Event invite") //title
-                .setContentText("Date")
+                .setContentTitle(event.getName()) //title
+                .setContentText(event.getFormattedStartDate() + " @ "+event.getLocation())
                 .setSmallIcon(R.drawable.fb_icon)
                 .setPriority(1)
                 .setContentIntent(pIntent)
@@ -173,7 +177,6 @@ public class MainActivity extends Activity {
 
         notificationManager.notify(1, noti);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -198,5 +201,19 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, FBListEventListActivity.class);
         startActivity(intent);
         onStop();
+    }
+
+    public void newEvent() {
+        CountDownTimer cdt = new CountDownTimer(5000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {}
+
+            @Override
+            public void onFinish() {
+                FacebookAPI api = FacebookAPI.getInstance(getApplicationContext());
+                FBEvent newEventForUser = api.getNewEventForUser();
+                createNotification2(newEventForUser);
+            }
+        }.start();
     }
 }

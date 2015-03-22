@@ -2,10 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        debug {
-            storeFile file('C:/Users/Faizan/.android/debug.keystore')
-            storePassword 'android'
-        }
     }
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
@@ -24,5 +20,5 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
 }

@@ -1,4 +1,4 @@
-package mm.events.backend;
+package mm.events.domain;
 
 public enum RSVPStatus {
     GOING, MAYBE, DECLINED, UNSURE, UNKNOWN;

@@ -1,9 +1,5 @@
-package mm.events.backend;
+package mm.events.domain;
 
-import android.util.Log;
-
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -18,14 +14,14 @@ public class FBEvent implements Comparable{
     RSVPStatus status;
 
     public FBEvent(String id, String name,
-                   String location, String startTime,
-                   String endTime, String timezone,
+                   String location, Date startTime,
+                   Date endTime, String timezone,
                    RSVPStatus status) {
         this.id = id;
         this.name = name;
         this.location = location;
-        this.startTime = toUtilDate(startTime);
-        this.endTime = toUtilDate(endTime);
+        this.startTime = startTime;
+        this.endTime = endTime;
         this.timezone = timezone;
         this.status = status;
     }
@@ -66,6 +62,15 @@ public class FBEvent implements Comparable{
         return startTime.getHours() == 0;
     }
 
+    public String getFormattedStartDate() {
+        SimpleDateFormat format;
+        if (isAllDay())
+            format = new SimpleDateFormat("dd.MM.yyyy");
+        else
+            format = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+        return format.format(startTime);
+    }
+
     @Override
     public String toString() {
         return "FBEvent{" +
@@ -82,13 +87,5 @@ public class FBEvent implements Comparable{
     @Override
     public int compareTo(Object another) {
         return compareTo((FBEvent)another);
-    }
-
-    private static Date toUtilDate(String dateString) {
-        DateFormat format = new SimpleDateFormat(dateString.contains("T") ? "yyyy-MM-dd'T'hh:mm:ss" : "yyyy-MM-dd");
-
-        try {
-            return format.parse(dateString);
-        } catch (ParseException e) {e.printStackTrace(); return null;}
     }
 }
