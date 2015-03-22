@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,19 +42,26 @@ public class MainActivity extends ActionBarActivity {
 
     // another method
     public void createNotification(FBEvent event) {
+        Log.e("main id", event.getId());
+
+
+
+
         //going
         Intent intentGoing = new Intent(this, NotifyActivityHandler.class);
-        intentGoing.putExtra("action", "going");
-        intentGoing.putExtra("id", event.getId());
+        intentGoing.putExtra("Accept", event.getId().toString());
+//        intentGoing.putExtra("action", ""+event.getId().toString());
+//        intentGoing.putExtra("action", "going");
+//        intentGoing.putExtra("id", event.getId().toString());
 
         //maybe
         Intent intentMaybe = new Intent(this, NotifyActivityHandler.class);
-        intentMaybe.putExtra("action", "maybe");
-        intentMaybe.putExtra("id", event.getId());
+        intentMaybe.putExtra("Maybe", event.getId().toString());
+//        intentMaybe.putExtra("id", event.getId());
         //reject
         Intent intentReject = new Intent(this, NotifyActivityHandler.class);
-        intentReject.putExtra("action", "reject");
-        intentReject.putExtra("id", event.getId());
+        intentReject.putExtra("Decline", event.getId().toString());
+//        intentReject.putExtra("id", event.getId());
 
        /* // 1 intent:
         Intent i1 = new Intent(this, NotifyActivityHandler.class);

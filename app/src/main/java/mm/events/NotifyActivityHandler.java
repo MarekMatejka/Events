@@ -3,6 +3,7 @@ package mm.events;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,6 +15,7 @@ import mm.events.domain.RSVPStatus;
 
 public class NotifyActivityHandler extends Activity {
 
+    String accept, maybe, decline;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,33 +23,74 @@ public class NotifyActivityHandler extends Activity {
         int i = 0;
         Log.i("here", "here");
 
+        accept = null;
+        maybe = null;
+        decline = null;
+
         Bundle gotdata = getIntent().getExtras();
+        try {
+            accept = gotdata.getString("Accept");
+        } catch (Exception e) {
+            Log.e("",e.toString());
+        }
+
+
+        try {
+            maybe = gotdata.getString("Maybe");
+        } catch (Exception e) {
+            Log.e("",e.toString());
+        }
+
+
+        try {
+            decline = gotdata.getString("Decline");
+        } catch (Exception e) {
+            Log.e("",e.toString());
+        }
+
+
         String action  = gotdata.getString("action");
-        String id = gotdata.getString("id");
+//        String id = gotdata.getString("id");
+
+
+      Log.e("accept: id ", ""+accept);
+      Log.e("maybe: id ", ""+maybe);
+      Log.e("decline: id ", ""+decline);
 
 
 //        String action = getIntent().getExtras().getString("action");
 
         FacebookAPI api = FacebookAPI.getInstance(this);
 
-        Log.i("action", i + action);
+        if (accept!=null){
+            api.RSVPtoEvent(accept, RSVPStatus.GOING);
+        }
+        else if (maybe!=null){
+            api.RSVPtoEvent(maybe, RSVPStatus.MAYBE);
+        }
+        else if (decline!=null){
+            api.RSVPtoEvent(decline, RSVPStatus.DECLINED);
+        }
+
+
+       /* Log.e("action", i + action);
         i++;
         if (action != null) {
             switch (action) {
                 case "going":
-                    api.RSVPtoEvent(id, RSVPStatus.GOING);
+//                    api.RSVPtoEvent(accept, RSVPStatus.GOING);
                     Toast.makeText(NotifyActivityHandler.this, "Accept", Toast.LENGTH_SHORT).show();
                     break;
                 case "maybe":
-                    api.RSVPtoEvent(id, RSVPStatus.MAYBE);
+//                    api.RSVPtoEvent(id, RSVPStatus.MAYBE);
                     Toast.makeText(NotifyActivityHandler.this, "maybe", Toast.LENGTH_SHORT).show();
                     break;
                 case "reject":
-                    api.RSVPtoEvent(id, RSVPStatus.DECLINED);
+//                    api.RSVPtoEvent(id, RSVPStatus.DECLINED);
                     Toast.makeText(NotifyActivityHandler.this, "Reject!!!!!!", Toast.LENGTH_SHORT).show();
                     break;
             }
-        }
+        }*/
       /*  if (action != null) {
             if (action.equals("going")) {
                 Toast.makeText(NotifyActivityHandler.this, "Accept", Toast.LENGTH_SHORT).show();
