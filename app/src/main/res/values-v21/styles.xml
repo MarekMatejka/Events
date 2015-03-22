@@ -1,0 +1,13 @@
+<resources>
+    <!-- for lollipop devices -->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base">
+        <!-- Customize your theme here. -->
+
+        <item name="android:colorPrimary">@color/primaryColour</item>
+        <item name="android:colorPrimaryDark">@color/primaryColourDark</item>
+        <item name="android:colorAccent">@color/accentColour</item>
+
+    </style>
+
+</resources>

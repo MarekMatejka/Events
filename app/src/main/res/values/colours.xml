@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- primary colour the 500 one
+    primary dark is 700 unit
+    accent is a different colour to primary 500 unit
+    http://www.google.co.uk/design/spec/style/color.html#color-color-palette
+    -->
+
+    <!-- action bar background -->
+    <color name="primaryColour">#3f51b5</color>
+
+    <!-- status bar -->
+    <color name="primaryColourDark">#303f9f</color>
+
+    <!-- accent complimenting colours -->
+    <color name="accentColour">#e91e63</color>
+    <color name="accentColourYellow">#FF9800</color>
+    <color name="accentColourPink">#e91e63</color>
+    <color name="accentColourRed">#f44336</color>
+
+    <!-- other complimenting colours -->
+    <color name="moreColourWhite">#ffffff</color>
+
+
+</resources>
