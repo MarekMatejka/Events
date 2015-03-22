@@ -1,5 +1,6 @@
 package mm.events.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class FBEventDetails {
@@ -62,5 +63,23 @@ public class FBEventDetails {
 
     public FBEventVenue getVenue() {
         return venue;
+    }
+
+    public String getFormattedStartDate() {
+        SimpleDateFormat format;
+        if (isAllDay())
+            format = new SimpleDateFormat("dd.MM.yyyy");
+        else
+            format = new SimpleDateFormat("dd.MM.yyyy hh:mm a");
+        return format.format(startTime);
+    }
+
+    public String getFormattedEndDate() {
+        SimpleDateFormat format;
+        if (isAllDay())
+            format = new SimpleDateFormat("dd.MM.yyyy");
+        else
+            format = new SimpleDateFormat("dd.MM.yyyy hh:mm a");
+        return format.format(endTime);
     }
 }

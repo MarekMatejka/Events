@@ -67,7 +67,7 @@ public class FBEvent implements Comparable{
         if (isAllDay())
             format = new SimpleDateFormat("dd.MM.yyyy");
         else
-            format = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+            format = new SimpleDateFormat("dd.MM.yyyy hh:mm a");
         return format.format(startTime);
     }
 

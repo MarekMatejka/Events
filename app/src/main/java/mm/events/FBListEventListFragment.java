@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import java.util.List;
 
+import mm.events.adapter.EventsListAdapter;
 import mm.events.domain.FBEvent;
 import mm.events.backend.FacebookAPI;
 
@@ -78,11 +79,7 @@ public class FBListEventListFragment extends ListFragment {
         FacebookAPI api = FacebookAPI.getInstance(getActivity());
         events = api.getAllEventsForUser();
         // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<FBEvent>(
-                getActivity(),
-                android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1,
-                events));
+        setListAdapter(new EventsListAdapter(getActivity(), events));
     }
 
     @Override
