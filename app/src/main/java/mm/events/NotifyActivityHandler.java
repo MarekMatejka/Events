@@ -8,6 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import mm.events.backend.FacebookAPI;
+import mm.events.domain.RSVPStatus;
+
 
 public class NotifyActivityHandler extends Activity {
 
@@ -20,21 +23,27 @@ public class NotifyActivityHandler extends Activity {
 
         Bundle gotdata = getIntent().getExtras();
         String action  = gotdata.getString("action");
+        String id = gotdata.getString("id");
 
 
 //        String action = getIntent().getExtras().getString("action");
+
+        FacebookAPI api = FacebookAPI.getInstance(this);
 
         Log.i("action", i + action);
         i++;
         if (action != null) {
             switch (action) {
                 case "going":
+                    api.RSVPtoEvent(id, RSVPStatus.GOING);
                     Toast.makeText(NotifyActivityHandler.this, "Accept", Toast.LENGTH_SHORT).show();
                     break;
                 case "maybe":
+                    api.RSVPtoEvent(id, RSVPStatus.MAYBE);
                     Toast.makeText(NotifyActivityHandler.this, "maybe", Toast.LENGTH_SHORT).show();
                     break;
                 case "reject":
+                    api.RSVPtoEvent(id, RSVPStatus.DECLINED);
                     Toast.makeText(NotifyActivityHandler.this, "Reject!!!!!!", Toast.LENGTH_SHORT).show();
                     break;
             }

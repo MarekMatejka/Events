@@ -44,13 +44,16 @@ public class MainActivity extends ActionBarActivity {
         //going
         Intent intentGoing = new Intent(this, NotifyActivityHandler.class);
         intentGoing.putExtra("action", "going");
+        intentGoing.putExtra("id", event.getId());
 
         //maybe
         Intent intentMaybe = new Intent(this, NotifyActivityHandler.class);
         intentMaybe.putExtra("action", "maybe");
+        intentMaybe.putExtra("id", event.getId());
         //reject
         Intent intentReject = new Intent(this, NotifyActivityHandler.class);
         intentReject.putExtra("action", "reject");
+        intentReject.putExtra("id", event.getId());
 
        /* // 1 intent:
         Intent i1 = new Intent(this, NotifyActivityHandler.class);
@@ -60,6 +63,7 @@ public class MainActivity extends ActionBarActivity {
         // open activity
         Intent intentContent = new Intent(this, FBListEventListActivity.class);
         intentContent.putExtra("action", "content");
+
         PendingIntent pIntentGoing = PendingIntent.getActivity(this, 0, intentGoing, 0);
         PendingIntent pIntentReject = PendingIntent.getActivity(this, 1, intentReject, 0);
         PendingIntent pIntentMaybe = PendingIntent.getActivity(this, 2, intentMaybe, 0);
