@@ -3,6 +3,7 @@ package mm.events;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -10,30 +11,30 @@ import android.widget.Toast;
 
 public class NotifyActivityHandler extends Activity {
 
-    public static final String PERFORM_NOTIFICATION_BUTTON = "perform_notification_button";
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notify_activity_handler);
 
-//        Intent intent = this.getIntent();
+        Log.e("here", "here");
 
-       /* Bundle gotdata = getIntent().getExtras();
-        String action = gotdata.getString("data");
+        String action = getIntent().getExtras().getString("action");
 
-//        String action = (String) getIntent().getExtras().get("data");
+        Log.e("action", action);
         if (action != null) {
-            if (action.equals("Accept")) {
-                Toast.makeText(NotifyActivityHandler.this, "Accept", Toast.LENGTH_SHORT).show();
-            } else if (action.equals("close")) {
-                // close current notification
+            switch (action) {
+                case "going":
+                    Toast.makeText(NotifyActivityHandler.this, "Accept", Toast.LENGTH_SHORT).show();
+                    break;
+                case "maybe":
+                    Toast.makeText(NotifyActivityHandler.this, "Maybe", Toast.LENGTH_SHORT).show();
+                    break;
+                case "reject":
+                    Toast.makeText(NotifyActivityHandler.this, "Reject", Toast.LENGTH_SHORT).show();
+                    break;
             }
-        }*/
-
-//        finish();
-
+        }
+        finish();
     }
 
 

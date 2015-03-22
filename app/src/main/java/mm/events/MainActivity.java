@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -76,27 +77,35 @@ public class MainActivity extends Activity {
 
     // another method
     public void createNotification(FBEvent event) {
-        Intent intent = new Intent(this, NotifyActivityHandler.class);
-//        Intent intent = new Intent(this, MainActivity.class);
+        Intent intentGoing = new Intent(this, NotifyActivityHandler.class);
+        intentGoing.putExtra("action", "going");
+        Intent intentMaybe = new Intent(this, NotifyActivityHandler.class);
+        intentMaybe.putExtra("action", "maybe");
+        Intent intentReject = new Intent(this, NotifyActivityHandler.class);
+        intentReject.putExtra("action", "reject");
+        //Intent intentContent = new Intent(this, FBListEventListActivity.class);
 
-        PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        PendingIntent pIntentGoing = PendingIntent.getActivity(this, 4, intentGoing, 0);
+        PendingIntent pIntentMaybe = PendingIntent.getActivity(this, 1, intentMaybe, 0);
+        PendingIntent pIntentReject = PendingIntent.getActivity(this, 2, intentReject, 0);
+        //PendingIntent pIntentContent = PendingIntent.getActivity(this, 3, intentContent, 0);
 
         // Build notification
         // Actions are just fake
-        Notification noti = new Notification.Builder(this)
-                .setContentTitle(event.getName()) //title
-                .setContentText(event.getFormattedStartDate() + " @ "+event.getLocation())
+        Notification notification = new Notification.Builder(this)
+                .setContentTitle(event.getName())
+                .setContentText(event.getFormattedStartDate() + " @ " + event.getLocation())
                 .setSmallIcon(R.drawable.fb_icon)
                 .setPriority(1)
-                .setContentIntent(pIntent)
-                .addAction(0, "Accept", pIntent)
-                .addAction(0, "Maybe", pIntent)
-                .addAction(0, "Decline", pIntent).build();
-        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        // hide the notification after its selected
-        noti.flags |= Notification.FLAG_AUTO_CANCEL;
+                //.setContentIntent(pIntentContent)
+                //.addAction(0, "Accept", pIntentGoing)
+                //.addAction(0, "Maybe", pIntentMaybe)
+                .addAction(0, "Decline", pIntentReject).build();
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        // hide the notification after it is selected
+        notification.flags |= Notification.FLAG_AUTO_CANCEL;
 
-        notificationManager.notify(1, noti);
+        notificationManager.notify(1, notification);
     }
 
     @Override
@@ -125,7 +134,7 @@ public class MainActivity extends Activity {
     }
 
     public void newEvent() {
-        CountDownTimer cdt = new CountDownTimer(5000, 1000) {
+        CountDownTimer cdt = new CountDownTimer(500, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {}
 
