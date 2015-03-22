@@ -6,12 +6,30 @@
     android:orientation="vertical"
     android:padding="15dp">
 
-    <TextView
-        android:id="@+id/event_details_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:paddingBottom="5dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <mm.events.views.LogoView
+            android:id="@+id/event_details_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="f073"
+            android:textColor="@color/text_style_color"
+            android:textSize="30sp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/event_details_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:paddingBottom="5dp"
+            android:layout_toLeftOf="@id/event_details_calendar"/>
+
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
@@ -36,22 +54,45 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
-                <mm.events.views.LogoView
-                    android:id="@+id/event_details_status"
+                <RadioGroup
+                    android:id="@+id/group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textSize="30sp"/>
+                    android:orientation="horizontal">
 
-                <mm.events.views.LogoView
-                    android:id="@+id/event_details_calendar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="f073"
-                    android:textSize="30sp"/>
+                    <mm.events.views.LogoRadioButton
+                        android:id="@+id/event_details_accept"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="f00c"
+                        android:button="@android:color/transparent"
+                        android:textColor="@color/text_style_color"
+                        android:textSize="30sp"/>
+
+                    <mm.events.views.LogoRadioButton
+                        android:id="@+id/event_details_maybe"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="f128"
+                        android:textColor="@color/text_style_color"
+                        android:textSize="30sp"/>
+
+                    <mm.events.views.LogoRadioButton
+                        android:id="@+id/event_details_decline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="f00d"
+                        android:button="@android:color/transparent"
+                        android:textColor="@color/text_style_color"
+                        android:textSize="30sp"/>
+                </RadioGroup>
 
             </LinearLayout>
 

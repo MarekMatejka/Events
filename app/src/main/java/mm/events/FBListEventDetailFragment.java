@@ -1,16 +1,19 @@
 package mm.events;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioGroup;
 import android.widget.TextView;
-
 
 import mm.events.backend.FacebookAPI;
 import mm.events.domain.FBEvent;
 import mm.events.domain.FBEventDetails;
+import mm.events.domain.RSVPStatus;
+import mm.events.views.LogoRadioButton;
 import mm.events.views.LogoView;
 
 /**
@@ -61,14 +64,53 @@ public class FBListEventDetailFragment extends Fragment {
             ((TextView) rootView.findViewById(R.id.event_details_time)).setText(getEventTime());
             ((TextView) rootView.findViewById(R.id.event_details_description)).setText(eventDetails.getDescription());
 
-            FacebookAPI api = FacebookAPI.getInstance(getActivity());
-            FBEvent event = api.getEvent(eventDetails.getId());
+            final FacebookAPI api = FacebookAPI.getInstance(getActivity());
 
-            ((LogoView) rootView.findViewById(R.id.event_details_status)).setLogo(getStatus(event));
+            final LogoRadioButton accept = (LogoRadioButton)rootView.findViewById(R.id.event_details_accept);
+            final LogoRadioButton maybe = (LogoRadioButton)rootView.findViewById(R.id.event_details_maybe);
+            final LogoRadioButton reject = (LogoRadioButton)rootView.findViewById(R.id.event_details_decline);
 
+            final RadioGroup group = (RadioGroup)rootView.findViewById(R.id.group);
+
+            final FBEvent event = api.getEvent(eventDetails.getId());
+
+            setStatus(accept, maybe, reject, group, event);
+
+            accept.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    api.RSVPtoEvent(eventDetails.getId(), RSVPStatus.GOING);
+                    setStatus(accept, maybe, reject, group, event);
+                }
+            });
+
+            maybe.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    api.RSVPtoEvent(eventDetails.getId(), RSVPStatus.MAYBE);
+                    setStatus(accept, maybe, reject, group, event);
+                }
+            });
+
+            reject.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    api.RSVPtoEvent(eventDetails.getId(), RSVPStatus.DECLINED);
+                    setStatus(accept, maybe, reject, group, event);
+                }
+            });
         }
 
         return rootView;
+    }
+
+    private void setStatus(LogoRadioButton accept, LogoRadioButton maybe, LogoRadioButton reject, RadioGroup group, FBEvent event) {
+        switch (event.getStatus()) {
+            case GOING: accept.setChecked(true); break;
+            case MAYBE: maybe.setChecked(true); break;
+            case DECLINED: reject.setChecked(true); break;
+            default: group.clearCheck();
+        }
     }
 
     private String getEventTime() {

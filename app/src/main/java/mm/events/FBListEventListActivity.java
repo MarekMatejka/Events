@@ -3,6 +3,7 @@ package mm.events;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v7.app.ActionBarActivity;
 
 
 /**
@@ -21,7 +22,7 @@ import android.app.Activity;
  * {@link FBListEventListFragment.Callbacks} interface
  * to listen for item selections.
  */
-public class FBListEventListActivity extends Activity
+public class FBListEventListActivity extends ActionBarActivity
         implements FBListEventListFragment.Callbacks {
 
     /**
