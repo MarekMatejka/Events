@@ -55,7 +55,7 @@ public class FacebookAPIFile extends FacebookAPI {
     @Override
     public FBEvent getNewEventForUser() {
         Random random = new Random();
-        FBEvent event = new FBEvent(""+random.nextInt(123456), "Test Event", "Right here", new Date(System.currentTimeMillis()),
+        FBEvent event = new FBEvent(""+random.nextInt(123456), "House Party", "Right here", new Date(System.currentTimeMillis()),
                 new Date(System.currentTimeMillis() + 1234567890), "Europe/UK", RSVPStatus.UNSURE);
         events.put(event.getId(), event);
 
