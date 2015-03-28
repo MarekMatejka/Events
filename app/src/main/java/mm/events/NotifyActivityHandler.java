@@ -72,36 +72,6 @@ public class NotifyActivityHandler extends Activity {
             api.RSVPtoEvent(decline, RSVPStatus.DECLINED);
         }
 
-
-       /* Log.e("action", i + action);
-        i++;
-        if (action != null) {
-            switch (action) {
-                case "going":
-//                    api.RSVPtoEvent(accept, RSVPStatus.GOING);
-                    Toast.makeText(NotifyActivityHandler.this, "Accept", Toast.LENGTH_SHORT).show();
-                    break;
-                case "maybe":
-//                    api.RSVPtoEvent(id, RSVPStatus.MAYBE);
-                    Toast.makeText(NotifyActivityHandler.this, "maybe", Toast.LENGTH_SHORT).show();
-                    break;
-                case "reject":
-//                    api.RSVPtoEvent(id, RSVPStatus.DECLINED);
-                    Toast.makeText(NotifyActivityHandler.this, "Reject!!!!!!", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-        }*/
-      /*  if (action != null) {
-            if (action.equals("going")) {
-                Toast.makeText(NotifyActivityHandler.this, "Accept", Toast.LENGTH_SHORT).show();
-
-            }
-
-            if (action.equals("maybe")) {
-                Toast.makeText(NotifyActivityHandler.this, "maybe", Toast.LENGTH_SHORT).show();
-            }
-        }*/
-
         finish();
     }
 
